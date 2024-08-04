@@ -1,0 +1,9 @@
+numpy
+matplotlib
+pandas
+pypdf
+google-generativeai
+nltk
+streamlit
+rouge
+sentence-transformers

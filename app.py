@@ -108,7 +108,7 @@ if metode_embed == "BERT":
             cv_texts = upload_and_extract_text(uploaded_cvs, "output_csv/cv_pelamar.csv")
             job_description_text = upload_and_extract_text(uploaded_job_desc, "jd.txt")
             
-            bert_metode, result_sum, top_n_indices, cv_df, avarage_similarity = bert("output_csv/cv_pelamar.csv", "jd.txt")
+            bert_metode, result_sum, top_n_indices, cv_df, avarage_similarity, average_bleu_score_bert, average_rouge_2_f_score_bert = bert("output_csv/cv_pelamar.csv", "jd.txt")
             
             st.subheader("AI Summary")
             st.markdown(bert_metode)
@@ -158,7 +158,7 @@ if metode_embed == "Gemini":
             cv_texts = upload_and_extract_text(uploaded_cvs, "output_csv/cv_pelamar.csv")
             job_description_text = pdf_to_text(uploaded_job_desc, "jd.txt")
             
-            gemini_metode, result_sum, top_n_indices, cv_df, avarage_similarity = gemini("output_csv/cv_pelamar.csv", "jd.txt")
+            gemini_metode, result_sum, top_n_indices, cv_df, avarage_similarity, average_bleu_score_gemini, average_rouge_2_f_score_gemini = gemini("output_csv/cv_pelamar.csv", "jd.txt")
             st.subheader("AI Summary")
             st.markdown(gemini_metode)
             
@@ -208,7 +208,7 @@ if metode_embed == "TF-IDF":
             job_description_text = pdf_to_text(uploaded_job_desc, "jd.txt")
             
             
-            tfidf_metode, result_sum, top_n_indices, cv_df, avarage_similarity = tfidf("output_csv/cv_pelamar.csv", "jd.txt")
+            tfidf_metode, result_sum, top_n_indices, cv_df, avarage_similarity, average_bleu_score_tfidf, average_rouge_2_f_score_tfidf = tfidf("output_csv/cv_pelamar.csv", "jd.txt")
             st.subheader("AI Summary")
             st.markdown(tfidf_metode)
             
@@ -260,7 +260,7 @@ if metode_embed == "All Compare":
             job_description_text = upload_and_extract_text(uploaded_job_desc, "jd.txt")
             
             bert_metode, bert_result_sum, bert_top_n_indices, bert_cv_df, avarage_similarity_bert, average_bleu_score_bert, average_rouge_2_f_score_bert = bert("output_csv/cv_pelamar.csv", "jd.txt")
-            gemini_metode, gemini_result_sum, gemini_top_n_indices, gemini_cv_df, avarage_similarity_gemini,average_bleu_score_gemini, average_rouge_2_f_score_gemini = gemini("output_csv/cv_pelamar.csv", "jd.txt")
+            gemini_metode, gemini_result_sum, gemini_top_n_indices, gemini_cv_df, avarage_similarity_gemini, average_bleu_score_gemini, average_rouge_2_f_score_gemini = gemini("output_csv/cv_pelamar.csv", "jd.txt")
             tfidf_metode, tfidf_result_sum, tfidf_top_n_indices, tfidf_cv_df, avarage_similarity_tfidf, average_bleu_score_tfidf, average_rouge_2_f_score_tfidf = tfidf("output_csv/cv_pelamar.csv", "jd.txt")
             
             st.subheader("Evaluation Embedding")

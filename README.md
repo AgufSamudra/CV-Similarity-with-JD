@@ -1,4 +1,4 @@
-# Major Recommendation Chatbot
+# CV Similarity with JD
 
 ## Cara install
 ```console

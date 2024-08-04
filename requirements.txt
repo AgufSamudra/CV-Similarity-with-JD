@@ -7,3 +7,4 @@ nltk
 streamlit
 rouge
 sentence-transformers
+markdown

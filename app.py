@@ -309,9 +309,24 @@ if metode_embed == "All Compare":
             df = pd.DataFrame({
                 "Metode": ["BERT", "Gemini", "TF-IDF"],
                 "Similarity": [avarage_similarity_bert, avarage_similarity_gemini, avarage_similarity_tfidf],
-                "Bleu Score": [average_bleu_score_bert, average_bleu_score_gemini, average_bleu_score_tfidf],
+                # "Bleu Score": [average_bleu_score_bert, average_bleu_score_gemini, average_bleu_score_tfidf],
                 "Rouge Score": [average_rouge_2_f_score_bert, average_rouge_2_f_score_gemini, average_rouge_2_f_score_tfidf]
             })
+            
+            print("Metode: BERT")
+            print(f"Average Similarity: {avarage_similarity_bert}")
+            # print(f"Average BLEU Score: {average_bleu_score_bert}")
+            print(f"Average ROUGE Score: {average_rouge_2_f_score_bert}\n")
+
+            print("Metode: Gemini")
+            print(f"Average Similarity: {avarage_similarity_gemini}")
+            # print(f"Average BLEU Score: {average_bleu_score_gemini}")
+            print(f"Average ROUGE Score: {average_rouge_2_f_score_gemini}\n")
+
+            print("Metode: TF-IDF")
+            print(f"Average Similarity: {avarage_similarity_tfidf}")
+            # print(f"Average BLEU Score: {average_bleu_score_tfidf}")
+            print(f"Average ROUGE Score: {average_rouge_2_f_score_tfidf}")
 
             # Plot Mean Similarity
             plt.figure(figsize=(8, 4))
@@ -322,15 +337,15 @@ if metode_embed == "All Compare":
             st.pyplot(plt.gcf())
             plt.clf()  # Clear figure to avoid overlap
 
-            # Plot Mean Bleu
-            st.subheader("Plot Mean Bleu")
-            plt.figure(figsize=(8, 4))
-            plt.bar(df["Metode"], df["Bleu Score"], color='lightgreen')
-            plt.xlabel("Metode")
-            plt.ylabel("Bleu Score")
-            plt.title("Mean Bleu Score")
-            st.pyplot(plt.gcf())
-            plt.clf()  # Clear figure to avoid overlap
+            # # Plot Mean Bleu
+            # st.subheader("Plot Mean Bleu")
+            # plt.figure(figsize=(8, 4))
+            # plt.bar(df["Metode"], df["Bleu Score"], color='lightgreen')
+            # plt.xlabel("Metode")
+            # plt.ylabel("Bleu Score")
+            # plt.title("Mean Bleu Score")
+            # st.pyplot(plt.gcf())
+            # plt.clf()  # Clear figure to avoid overlap
 
             # Plot Mean Rouge
             st.subheader("Plot Mean Rouge")

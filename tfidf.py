@@ -60,13 +60,12 @@ def tfidf(path_cv_csv, path_jd_txt):
         rouge_2_f = rouge_scores['rouge-2']['f']
         rouge_2_f_scores.append(rouge_2_f)
 
-        result_summary = f"Index: {index}\nSimilarity: {similarities[index, 0]}\nBLEU Score: {bleu_score}\nROUGE-2 F-Score: {rouge_2_f}"
+        result_summary = f"Index: {index}\nSimilarity: {similarities[index, 0]}\nROUGE-2 F-Score: {rouge_2_f}"
 
         # Collect results
         result = f"""
     Index: {index}
     Similarity: {similarities[index, 0]}
-    BLEU Score: {bleu_score}
     ROUGE-2 F-Score: {rouge_2_f}
     CV: {cv_text}
 

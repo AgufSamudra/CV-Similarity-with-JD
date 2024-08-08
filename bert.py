@@ -72,13 +72,12 @@ def bert(path_cv_csv, path_jd_txt):
         rouge_2_f = rouge_scores['rouge-2']['f']
         top_n_rouge_scores.append(rouge_2_f)  # Store the ROUGE-2 F-score
         
-        result_summary = f"Index: {index}\nSimilarity: {similarity_score}\nBLEU Score: {bleu_score}\nROUGE-2 F-Score: {rouge_2_f}"
+        result_summary = f"Index: {index}\nSimilarity: {similarity_score}\nROUGE-2 F-Score: {rouge_2_f}"
         
         # Collect results
         result = f"""
     Index: {index}
     Similarity: {similarity_score}
-    BLEU Score: {bleu_score}
     ROUGE-2 F-Score: {rouge_2_f}
     CV: {cv_text}
 
